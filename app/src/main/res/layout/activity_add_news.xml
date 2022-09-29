@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
-    android:onClick="addInfo"
     tools:context=".AddNewsActivity">
 
     <TextView
@@ -34,7 +33,7 @@
         android:layout_width="315dp"
         android:layout_height="68dp"
         android:layout_marginStart="7dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="194dp"
         android:background="#7FBCD8"
         android:backgroundTint="#7FBCD8"
@@ -52,7 +51,7 @@
         android:layout_width="320dp"
         android:layout_height="67dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="83dp"
         android:background="#7FBCD8"
         android:ems="10"
@@ -60,6 +59,7 @@
         android:inputType="time"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/location" />
 
