@@ -3,9 +3,11 @@ package com.example.newsapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class BrowseActivity extends AppCompatActivity {
@@ -25,4 +27,10 @@ private static final String key_name = "name";
         }
 
     }
+
+    public void goToAct(View v){
+        Intent intent = new Intent(BrowseActivity.this, AddNewsActivity.class);
+        startActivity(intent);
+    }
+
 }
