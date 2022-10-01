@@ -23,6 +23,9 @@ SharedPreferences sharedPreferences;
     SQLiteDatabase db;
     RecyclerView my_list;
   ArrayList<String> title;
+    ArrayList<String> time;
+    ArrayList<String> desc;
+    ArrayList<String> loc;
   DBHelper DB;
   myAdapter adapter;
 
@@ -38,11 +41,14 @@ private static final String key_name = "name";
         sharedPreferences = getSharedPreferences("com.lau.news", MODE_PRIVATE);
         String name = sharedPreferences.getString(key_name, null);
         if(name!= null){
-            textView.setText("Hi ! " + name + " here are our news for today: ");
+            textView.setText("Hi ! " + name + ", here are our news today: ");
         }
         DB = new DBHelper(this);
         title = new ArrayList<>();
-        adapter = new myAdapter(this, title);
+        time = new ArrayList<>();
+        desc = new ArrayList<>();
+        loc = new ArrayList<>();
+        adapter = new myAdapter(this, title, loc, time, desc);
         my_list.setAdapter(adapter);
         my_list.setLayoutManager(new LinearLayoutManager(this));
         display();
@@ -56,6 +62,9 @@ private static final String key_name = "name";
         }else{
             while(c.moveToNext()){
                 title.add(c.getString(3));
+                loc.add(c.getString(0));
+                time.add(c.getString(1));
+                desc.add(c.getString(2));
             }
         }
 
