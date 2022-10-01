@@ -45,14 +45,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
-    <ListView
-        android:id="@+id/news"
-        android:layout_width="409dp"
-        android:layout_height="525dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mylist"
+        android:layout_width="335dp"
+        android:layout_height="466dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
