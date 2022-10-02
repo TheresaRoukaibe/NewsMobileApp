@@ -58,7 +58,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder>{
                 public void onClick(View v){
                     Context c = v.getContext();
                     Intent i = new Intent(context, getNewsDetails.class);
-                    i.putExtra("name", title_name);
+                    i.putExtra("name", t);
                     context.startActivity(i);
                 }
             });
