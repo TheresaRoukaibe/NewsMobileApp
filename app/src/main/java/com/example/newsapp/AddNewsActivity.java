@@ -51,6 +51,7 @@ DBHelper DB;
             if(check){
                 Toast.makeText(AddNewsActivity.this, "Your news was added!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(AddNewsActivity.this, BrowseActivity.class);
+
                 startActivity(intent);
             }else{
                 Toast.makeText(AddNewsActivity.this, "Something went wrong while trying to insert your news", Toast.LENGTH_SHORT).show();

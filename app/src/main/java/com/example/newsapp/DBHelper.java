@@ -41,6 +41,11 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public Cursor getSingleNews(String t){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor c = DB.rawQuery("Select location_name FROM news_data WHERE title_name=?",new String[] {t}, null);
+        return c;
+    }
     public Cursor getNews(){
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor c = DB.rawQuery("Select * FROM news_data", null);

@@ -1,6 +1,7 @@
 package com.example.newsapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,6 @@ import java.util.ArrayList;
 public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder>{
     private Context context;
     private ArrayList location_name, time_name, desc_name, title_name;
-
 
     public myAdapter(Context context, ArrayList title_name, ArrayList location_name, ArrayList time_name, ArrayList desc_name) {
         this.context = context;
@@ -36,6 +36,8 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder>{
         holder.time_name.setText(String.valueOf(time_name.get(position)));
         holder.location_name.setText(String.valueOf(location_name.get(position)));
         holder.desc_name.setText(String.valueOf(desc_name.get(position)));
+
+
     }
 
     @Override
@@ -48,9 +50,18 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder>{
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             title_name = itemView.findViewById(R.id.title);
+            String t = title_name.getText().toString();
             time_name = itemView.findViewById(R.id.time);
             location_name =itemView.findViewById(R.id.loc);
             desc_name =itemView.findViewById(R.id.desc);
+            itemView.setOnClickListener( new View.OnClickListener() {
+                public void onClick(View v){
+                    Context c = v.getContext();
+                    Intent i = new Intent(context, getNewsDetails.class);
+                    i.putExtra("name", title_name);
+                    context.startActivity(i);
+                }
+            });
         }
     }
 }
